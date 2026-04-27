@@ -90,55 +90,106 @@ Face cropping alone reduced performance due to detection errors and loss of cont
 
 ## 6. How to Run
 
-1.	Open the notebook in Google Colab.
-2.	Make sure the dataset folder is already placed in Google Drive inside your project folder Like this below.
+## Dataset Structure
+
+Place the dataset in Google Drive using the following structure:
+
 MyDrive
+
 └── Deepfake_Project
+
   └── datasets
+  
     └── FaceForensics++_C23
+    
       ├── original
+      
       ├── Deepfakes
+      
       ├── Face2Face
+      
       ├── FaceSwap
+      
       ├── FaceShifter
+      
       └── NeuralTextures
-3.	Start from the top of the notebook and run the cells in order, one by one.
-4.	First, allow Colab to connect to your Google Drive when prompted.
-5.	Let the notebook load the dataset paths and confirm that the real and fake video folders are detected correctly.
-6.	Run the preprocessing part to:
-o	load the videos
-o	extract frames
-o	detect/crop faces
-o	prepare the data for training
-7.	Run the dataset split section so the notebook creates:
-o	training set
-o	validation set
-o	test set
-8.	Run the baseline experiment first.
-9.	After the baseline finishes, run the face-cropping experiment.
-10.	Then run the face-cropping + augmentation experiment.
-11.	After each experiment finishes:
-•	check the training curves
-•	check the confusion matrix
-•	note the accuracy, precision, recall, and F1-score
-12.	At the end, run the comparison/results section to generate the final performance table.
-13.	Check the project folders in Google Drive to confirm that:
-•	trained model files were saved
-•	result files were saved
-•	the final comparison table was saved
-Important notes
-•	Always run the notebook from top to bottom.
-•	If the runtime restarts, you must rerun the notebook from the beginning.
-•	The preprocessing and dataset-building stages take time, so wait until each section fully finishes before moving on.
-•	If Colab runs out of memory or time, reduce the dataset size or number of frames and rerun.
-•	Do not skip directly to training before the preprocessing and dataset preparation sections are completed.
-Output of the project
-When the notebook finishes, you should have:
-•	trained model files
-•	training and validation curves
-•	confusion matrices
-•	accuracy, precision, recall, and F1-score
-•	a final experiment comparison table
+
+## How to Run the Project
+
+1. Open the notebook in Google Colab.
+
+2. Make sure the dataset is already placed in Google Drive in the folder structure shown above.
+
+3. Run the notebook from the top to the bottom in order.
+
+4. When prompted, allow Colab to connect to Google Drive.
+
+5. Let the notebook verify the dataset folders and load the real and fake video files.
+
+6. Run the preprocessing stage to prepare the videos for training. This includes frame extraction, resizing, face cropping, and input preparation.
+
+7. Run the dataset split stage to generate the training, validation, and testing sets.
+
+8. Run the baseline experiment first.
+
+9. After that, run the face-cropping experiment.
+
+10. Then run the face-cropping plus augmentation experiment.
+
+11. After each experiment finishes, review:
+
+* training and validation curves
+* confusion matrix
+* accuracy
+* precision
+* recall
+* F1-score
+
+12. At the end, run the comparison section to generate the final performance table.
+
+13. Check Google Drive to confirm that:
+
+* trained model files were saved
+* results were saved
+* the final comparison table was saved
+
+## Output
+
+After the notebook finishes, the project should generate:
+
+* trained model files
+* training and validation curves
+* confusion matrices
+* accuracy, precision, recall, and F1-score
+* final experiment comparison table
+
+## Important Notes
+
+* Always run the notebook in order from top to bottom.
+* If the runtime restarts, rerun the notebook from the beginning.
+* Preprocessing and dataset preparation may take time, so wait for each stage to finish before moving on.
+* If Colab runs out of memory or session time, reduce the dataset size or frame count and rerun.
+* Do not skip directly to training before preprocessing and dataset preparation are completed.
+
+## Project Experiments
+
+The project includes three main experiments:
+
+1. Baseline CNN-LSTM
+2. CNN-LSTM with face cropping
+3. CNN-LSTM with face cropping and augmentation
+
+These experiments are compared using standard evaluation metrics to analyze the effect of preprocessing and augmentation on deepfake detection performance.
+
+## Evaluation Metrics
+
+The project evaluates performance using:
+
+* Accuracy
+* Precision
+* Recall
+* F1-score
+* Confusion matrix
 
 ---
 
@@ -152,3 +203,4 @@ See `requirements.txt`
 
 * Training performed on Google Colab with GPU
 * Dataset is not included due to large size
+* The project is designed to run in Google Colab with Google Drive integration.
