@@ -78,11 +78,11 @@ This project implements a deepfake detection system using a CNN-LSTM architectur
 
 ## 5. Results
 
-| Experiment | Accuracy | F1 Score |
-| ---------- | -------- | -------- |
-| Baseline   | 0.70     | 0.71     |
-| Face Crop  | 0.58     | 0.55     |
-| Face + Aug | 0.65     | 0.65     |
+| Experiment       | Accuracy | Precision | Recall | F1 Score |
+|------------------|----------|-----------|--------|----------|
+| Baseline         | 0.700    | 0.688     | 0.733  | 0.710    |
+| Face Crop        | 0.583    | 0.600     | 0.500  | 0.546    |
+| Face Crop + Aug  | 0.650    | 0.645     | 0.667  | 0.656    |
 
 Face cropping alone reduced performance due to detection errors and loss of contextual information. However, combining face cropping with augmentation improved generalization and resulted in better performance.
 
